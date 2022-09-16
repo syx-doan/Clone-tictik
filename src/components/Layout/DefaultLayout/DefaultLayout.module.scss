@@ -1,0 +1,17 @@
+.wapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container{
+    width: var(--default-layout-width);
+    display: flex;
+}
+
+.content{
+    flex: 1;
+    background: rgb(156, 143, 143);
+    min-height: 1000px;
+
+}
