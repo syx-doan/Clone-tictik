@@ -8,6 +8,9 @@
 
     --default-layout-header-hight: 60px;
     --default-layout-width: 1150px;
+    --black: #000;
+    --text-color: #333;
+    --white: #fff;
 }
 * {
     margin: 0;
@@ -23,4 +26,12 @@ body {
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
+}
+button,input,[tabindex]{
+    border: none;
+    outline: none;
+}
+a[href]{
+    color: var(--text-color);
+    text-decoration: none;
 }
