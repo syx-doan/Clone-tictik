@@ -28,11 +28,30 @@ body {
     line-height: 1.5;
     text-rendering: optimizeSpeed;
 }
-button,input,[tabindex]{
+button,
+input,
+[tabindex] {
     border: none;
     outline: none;
 }
-a[href]{
+a[href] {
     color: var(--text-color);
     text-decoration: none;
+}
+
+// custom tippy tolltip
+body {
+    .tippy-box {
+        border-radius: 8px;
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+        background-color: rgba(84, 84, 84, 0.92);
+    }
+    .tippy-arrow {
+        background-color: rgba(84, 84, 84, 0.92);
+    }
+    .tippy-content{
+        padding: 8px 9px;
+    }
 }
