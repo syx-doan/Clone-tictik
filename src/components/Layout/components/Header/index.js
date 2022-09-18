@@ -25,6 +25,37 @@ const MENU_ITEMS = [
     {
         icon: <FontAwesomeIcon icon={faEarthAsia} />,
         title: 'Tiếng Lòng',
+        children: {
+            title: 'Langguege',
+            data: [
+                {
+                    type: 'language',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Việt Nam',
+                
+                },
+                {
+                    type: 'language',
+                    code: 'ໄກ່',
+                    title: 'ຈອກ or ຈົວ',
+                },
+                {
+                    type: 'language',
+                    code: 'き に',
+                    title: 'ぬ め ぞ',
+                },
+                {
+                    type: 'language',
+                    code: '지읒',
+                    title: '쌍비읍 쌍지읒',
+                },
+            ],
+        },
     },
     {
         icon: <FontAwesomeIcon icon={faQuestionCircle} />,
@@ -41,9 +72,22 @@ function Header() {
 
     useEffect(() => {
         setTimeout(() => {
-            setSearchResult([]);
+            setSearchResult([1, 2]);
         }, 0);
     }, []);
+
+    //handle logic
+    const handleMenuChange = (menuItem) => {
+       switch (menuItem.type) {
+        case 'language':
+            // Thay đỏi chọn langgueage
+            break;
+       
+        default:
+            break;
+      
+          }
+    };
 
     return (
         <header className={cx('wapper')}>
@@ -83,7 +127,7 @@ function Header() {
                     <Button primary leftIcon={<FontAwesomeIcon icon={faSignIn} />}>
                         Login
                     </Button>
-                    <Menu items={MENU_ITEMS}>
+                    <Menu items={MENU_ITEMS}  onChange={handleMenuChange}>
                         <button className={cx('more-btn')}>
                             <FontAwesomeIcon icon={faEllipsisVertical} />
                         </button>
