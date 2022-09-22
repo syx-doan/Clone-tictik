@@ -8,6 +8,10 @@
 .menu-poper {
     padding-bottom: 8px;
 }
+.menu-scroll-body{
+    overflow-y: auto;
+    
+}
 
 .menu-items {
     width: 100%;
@@ -30,6 +34,7 @@
     position: relative;
     height: 50px;
     margin-top: -8px;
+    flex-shrink: 0;
 }
 .back-btn {
     width: 50px;

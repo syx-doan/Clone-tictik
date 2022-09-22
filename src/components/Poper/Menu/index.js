@@ -10,7 +10,7 @@ const cx = classNames.bind(styles);
 
 const defaultFn = () => {};
 
-function Menu({ children, items = [], onChange = defaultFn }) {
+function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn, }) {
     const [history, setHistory] = useState([{ data: items }]);
     const current = history[history.length - 1];
 
@@ -35,9 +35,11 @@ function Menu({ children, items = [], onChange = defaultFn }) {
     };
     return (
         <Tippy
+          
+            hideOnClick={hideOnClick}
             interactive
             delay={[0, 800]}
-            offset={[12,8]}
+            offset={[12, 8]}
             placement="bottom-end"
             render={(attrs) => (
                 <div className={cx('menu-list')} tabIndex={-1} {...attrs}>
@@ -50,11 +52,11 @@ function Menu({ children, items = [], onChange = defaultFn }) {
                                 }}
                             />
                         )}
-                        {renderItems()}
+                        <div className={cx('menu-scroll-body')}> {renderItems()}</div>
                     </PoperWapper>
                 </div>
             )}
-            onHide={() =>setHistory(prev => prev.slice(0,1))}
+            onHide={() => setHistory((prev) => prev.slice(0, 1))}
         >
             {children}
         </Tippy>
