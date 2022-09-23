@@ -33,7 +33,7 @@ const MENU_ITEMS = [
         icon: <FontAwesomeIcon icon={faEarthAsia} />,
         title: 'Tiếng Lòng',
         children: {
-            title: 'Langguege',
+            title: 'Ngôn Ngữ',
             data: [
                 {
                     type: 'language',
